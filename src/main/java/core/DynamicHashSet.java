@@ -1,8 +1,10 @@
 package main.java.core;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Objects;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class DynamicHashSet<T> {
     private record Entry<E>(E value, Entry next){}
@@ -50,6 +52,12 @@ public class DynamicHashSet<T> {
     public boolean contains(Object obj) {
         Objects.requireNonNull(obj);
         return entries[hash(obj, entries.length)] != null;
+    }
+
+    public void addAll(Collection<? extends T> values)  {
+        for (var value: values) {
+            add(value);
+        }
     }
 
     public int size() {

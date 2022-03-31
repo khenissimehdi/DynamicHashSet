@@ -160,7 +160,7 @@ public class DynamicHashSetTest {
   }
 
   // --- exercice 3 ---
-/*
+
   @Test @Tag("Q1")
   public void shouldAddAllTheElementsOfAList() {
     var set = new DynamicHashSet<String>();
@@ -196,5 +196,5 @@ public class DynamicHashSetTest {
     set.add("foo");
     Consumer<Object> consumer = o -> assertEquals("foo", o);
     set.forEach(consumer);
-  }*/
+  }
 }
